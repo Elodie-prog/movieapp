@@ -6,8 +6,6 @@ router.get('/:id', moviesController.displayAllMovies);
 router.get('/:id', moviesController.displayMoviesByCategories);
 router.get('/:id', moviesController.getMovieByTitle);
 router.get('/:id', moviesController.getMovieById);
-router.get('/:id', moviesController.getMyFavoritesMovies);
-router.post('/:id', moviesController.addMovies);
-router.delete('/:id', moviesController.deleteMovies);
+
 
 module.exports = router;
