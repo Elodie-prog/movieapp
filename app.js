@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 const movies = require('./routes/movies');
-const users = require('./routes/user');
+const users = require('./routes/users');
 
 app.use('/user', users);
 app.use('/movie', movies);

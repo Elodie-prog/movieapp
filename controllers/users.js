@@ -1,6 +1,20 @@
-exports.displayAllMovies = (req, res, next) => {
-    res.render('movies/movies.hbs')}
+exports.getMyFavoritesMovies = (req, res, next) => {
+        res.send(200).json({
+                success: true,
+                msg: `Display all my favorites movies: ${req.params.id}`
+        })
+};
 
-router.get('/:id', moviesController.getMyFavoritesMovies);
-router.post('/:id', moviesController.addMovies);
-router.delete('/:id', moviesController.deleteMovies);
+exports.deleteMovies = (req, res, next) => {
+        res.send(200).json({
+                success: true,
+                msg: `Delete a movie from my favorite: ${req.params.id}`
+        })
+};
+
+exports.addMovies = (req, res, next) => {
+        res.send(200).json({
+                success: true,
+                msg: `Add movie to my favorite: ${req.params.id}`
+        })
+};
