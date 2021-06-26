@@ -3,7 +3,7 @@ const Movie = require("../models/movie");
 exports.displayAllMovies = (req, res, next) => {
     Movie.find({}, (err, docs) => {
         if (!docs) {
-            res.send(404).json({
+            res.status(404).json({
                 success: false,
                 msg: "Whoops! Looks like we could not find your movie!"
             })
@@ -18,9 +18,9 @@ exports.displayAllMovies = (req, res, next) => {
 };
 
 exports.displayMoviesByCategories = (req, res, next) => {
-    Movie.findByCategory({category: req.params.category}, (err, docs) => {
+    Movie.find({category: req.params.category}, (err, docs) => {
         if (!docs) {
-            res.send(404).json({
+            res.status(404).json({
                 success: false,
                 msg: "Whoops! Looks like there are no movies for this category"
             })
@@ -34,9 +34,9 @@ exports.displayMoviesByCategories = (req, res, next) => {
 };
 
 exports.getMovieByTitle = (req, res, next) => {
-    Movie.findByTitle({title: req.params.title}, (err, docs) => {
+    Movie.find({title: req.params.title}, (err, docs) => {
         if (!docs) {
-            res.send(404).json({
+            res.status(404).json({
                 success: false,
                 msg: "Whoops! There no movies with this title",
                 movies: docs
@@ -52,9 +52,9 @@ exports.getMovieByTitle = (req, res, next) => {
 };
 
 exports.getMovieById = (req, res, next) => {
-    Movies.findById({id: req.params.id}, (err, docs) => {
+    Movie.findById( req.params.id, (err, docs) => {
         if (!docs) {
-            res.send(404).json({
+            res.status(404).json({
                 success: false,
                 msg: "Whoops! There no movies with this Id",
                 movies: docs
