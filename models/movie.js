@@ -18,13 +18,11 @@ const movieSchema = new Schema({
         type: String,
         required: [true]
     },
-    year : {
+    year: {
         type: Number,
         required: [true]
     },
-    rating: {
-        type: Number,
-        unique: [true]
+    rating: Number
 });
 
 const Movie = mongoose.model("Movie", movieSchema);
